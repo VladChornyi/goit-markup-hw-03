@@ -1,26 +1,35 @@
 /*общее*/
-
-:root {
-  --primary-text-color: #757575;
-  --title-text-color: #212121;
-  --accent-color: #2196f3;
+html {
+  box-sizing: border-box;
 }
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+:root {
+  --primary-text-color: #757575;
+  --title-text-color: #212121;
+  --accent-color: #2196f3;
+}
 h1,
 h2,
 h3,
-p,
-ul {
-  margin: 0;
-  padding: 0;
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
 }
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 body {
   margin: 0;
@@ -33,6 +42,7 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+/*==================ELEMENTS=====================*/
 .container {
   width: 1200px;
   margin-left: auto;
@@ -40,9 +50,7 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
-.list {
-  list-style: none;
-}
+
 .title {
   color: var(--title-text-color);
 }
@@ -136,8 +144,9 @@ body {
   color: var(--accent-color);
 }
 
-/*main*/
-/*hero*/
+/*============================MAIN====================================*/
+
+/*=============================HERO==================================*/
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -179,19 +188,23 @@ body {
 .hero-button:focus {
   background: #188ce8;
 }
-/*преимущества*/
+/*===========================ПРЕИМУЩЕСТВА==========================*/
 
 .advantage {
   display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 .advantage .item {
-  width: 270px;
-}
-.advantage .item:not(:last-child) {
-  margin-right: 30px;
+  flex-basis: calc((100% - 30px * 4) / 4);
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .advantage .title {
+  margin-bottom: 10px;
+
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
@@ -199,7 +212,7 @@ body {
   text-transform: uppercase;
 }
 
-/*сфера деятельности и команда*/
+/*=======================СФЕРА ДЕЯТЕЛЬНОСТИ=======================*/
 .works-title {
   margin-left: auto;
   margin-right: auto;
@@ -220,10 +233,17 @@ body {
 }
 .works-example {
   display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
-.works-example li:not(:last-child) {
-  margin-right: 30px;
+.works-example .item {
+  flex-basis: calc((100% - 30px * 3) / 3);
+  margin-left: 30px;
+  margin-top: 30px;
 }
+
+/*===========================TEAM============================*/
 .team {
   background-color: #f5f4fa;
 }
@@ -245,7 +265,14 @@ body {
 }
 .team-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.team-list .item {
+  flex-basis: calc((100% - 30px * 4) / 4);
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .teammate {
@@ -260,7 +287,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-/*footer*/
+/*=============================FOOTER===============================*/
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -306,7 +333,9 @@ body {
   color: var(--accent-color);
 }
 
-/*portfolio.html*/
+/*======================PORTFOLIO.HTML========================*/
+
+/*========================FILTER=============================*/
 .button {
   padding: 6px 22px;
   margin-bottom: 50px;
@@ -339,6 +368,8 @@ body {
   background-color: var(--accent-color);
   color: #ffffff;
 }
+
+/*==========================PORTFOLIO========================*/
 .portfolio-title {
   display: none;
 }
@@ -349,7 +380,7 @@ body {
   margin-top: -30px;
 }
 .portfolio > .item {
-  flex-basis: calc(100% / 3 - 30px);
+  flex-basis: calc(100% - 30px * 3 / 30px);
 
   margin-left: 30px;
   margin-top: 30px;
@@ -366,12 +397,13 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
 }
-/*!!!!!
 .card-text {
   padding: 20px 24px;
   border-width: 10px;
-  border: #000;
-}*/
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
 .project-type {
   margin-top: 4px;
 
